@@ -16,6 +16,7 @@
       <class name="com.testng.practice.ActionsEx4"></class>
       <class name="com.testng.practice.WebTableEx"></class> -->
       <class name="com.testng.practice.ActionsEx2"></class>
+      <class name="com.testng.practice.Reports"></class>
 
     </classes>
   </test>

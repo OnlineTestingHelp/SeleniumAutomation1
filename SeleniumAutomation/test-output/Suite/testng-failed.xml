@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <listeners>
     <listener class-name="com.testng.practice.ListenerLogic"/>
     <listener class-name="org.uncommons.reportng.HTMLReporter"/>
   </listeners>
-  <test thread-count="5" parallel="classes" name="Test(failed)">
+  <test thread-count="5" name="Test(failed)" parallel="classes">
     <parameter name="Browser" value="Chrome"/>
     <classes>
-      <class name="com.testng.practice.WebTableEx">
+      <class name="com.testng.practice.ActionsEx2">
         <methods>
-          <include name="webTableEx"/>
+          <include name="initializeReport"/>
+          <include name="actionEx1"/>
+          <include name="launchBrowser"/>
+          <include name="closeReport"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- com.testng.practice.WebTableEx -->
+      </class> <!-- com.testng.practice.ActionsEx2 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

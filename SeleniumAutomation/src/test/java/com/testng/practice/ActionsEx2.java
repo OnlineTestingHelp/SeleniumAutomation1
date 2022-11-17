@@ -16,16 +16,20 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class ActionsEx2 {
+public class ActionsEx2 extends Reports {
 	WebDriver driver;
 	Logger log = (Logger) LogManager.getLogger(ActionsEx2.class);
-	
+	ExtentTest test;
 	
 	@BeforeMethod
 	@Parameters(value= {"Browser"})
 	public void launchBrowser(String brName) {
+		 
 		// TODO Auto-generated method stub
 		// Actions class is used for keyboard and mouse operations
 		
@@ -42,8 +46,10 @@ public class ActionsEx2 {
 			driver = new EdgeDriver();
 		}
 			
-		log.info("Browser is launched successfully");
-		
+//		log.info("Browser is launched successfully");
+//		 
+//		test.log(Status.PASS, "Browser is launched successfully");
+
 		
 	}
 	
@@ -55,6 +61,7 @@ public class ActionsEx2 {
 	
 	@Test(groups = {"RegressionTest"})
 	public void actionEx1() {
+		test = report.createTest("Actions", "Move to element and perform click");
 		driver.get("https://the-internet.herokuapp.com/jqueryui/menu");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -67,6 +74,7 @@ public class ActionsEx2 {
 		a.moveToElement(enabled).pause(1000).moveToElement(downloads).pause(1000).moveToElement(excel).click().build().perform();
 		
 		log.info("LOG:: Test is passed");
+		test.log(Status.PASS, "Actions Functionality is tested successfully");
 	}
 
 }
