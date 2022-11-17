@@ -74,6 +74,8 @@ public class ActionsEx2 extends Reports {
 		a.moveToElement(enabled).pause(1000).moveToElement(downloads).pause(1000).moveToElement(excel).click().build().perform();
 		
 		log.info("LOG:: Test is passed");
+		
+		//Validation
 		test.log(Status.PASS, "Actions Functionality is tested successfully");
 	}
 
